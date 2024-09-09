@@ -16,50 +16,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
-
-    <style>
-        /* เปลี่ยนพื้นหลังของทั้งหน้า */
-        body {
-            background: url('assets/img/Profile.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        
-        /* ซ่อนข้อความ "Account settings" ในหน้าจอขนาดใหญ่ */
-        .navbar-brand {
-            display: none;
-        }
-
-        /* Media query สำหรับหน้าจอขนาดเล็ก */
-        @media (max-width: 768px) {  
-            .navbar-nav .nav-link {
-                color: #ffffff; /* สีตัวอักษรในหน้าจอขนาดเล็ก */
-            }
-
-            .navbar-nav .nav-link:hover {
-                color: #43a76d !important; /* เปลี่ยนสีเป็นเขียวเมื่อโฮเวอร์ในหน้าจอขนาดเล็ก */
-            }
-        }
-
-        /* Media query สำหรับหน้าจอขนาดใหญ่ */
-        @media (min-width: 769px) {
-            .navbar-nav .nav-link {
-                color: #ffffff; /* สีตัวอักษรในหน้าจอขนาดใหญ่ */
-            }
-
-            .navbar-nav .nav-link:hover {
-                color: #1fac88 !important; /* เปลี่ยนสีเป็นเขียวเมื่อโฮเวอร์ในหน้าจอขนาดใหญ่ */
-            }
-        }
-
-        .navbar-toggler {
-            border: none; /* เอาขอบออก */
-        }
-    </style>
-
 </head>
 
 <body>
-    <div class="card overflow-hidden" style="background: url('.../assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover; color: #ffffff;"></div>
+    <div class="card overflow-hidden" style="background: url('../assets/img/profile.jpg') no-repeat center center; background-size: cover; color: #ffffff;"></div>
     <div class="container light-style flex-grow-1 container-p-y">
         <div class="d-flex justify-content-between no-border">
             <h4 class="font-weight-bold py-3 mb-4">Account settings</h4>
@@ -76,17 +36,18 @@
                         <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-change-password">เปลี่ยนรหัสผ่าน</a>
                         <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-info">ข้อมูล</a>
                         <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-social-links">ลิงค์โซเชียล</a>
-                        <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#connections">ช้อมูลการค้า</a>
+                        <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#connections">ข้อมูลการค้า</a>
                         </a>
                     </div>
                 </div>
                 
+
                 <div class="col-md-9">
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="account-general">
                             <div class="card-body media align-items-center">
                                 <div class="media align-items-center">
-                                    <img src="https://scontent.fbkk3-4.fna.fbcdn.net/v/t39.30808-6/429815762_3300227416940834_7291681446868113561_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHXnCMMQkX8o1C7j0L2jYE5KrR4WiEP5D4qtHhaIQ_kPt9Kb4xCXZ7w4DmwHJA0FYDR2kmqnnjTn3bV-SZAw30C&_nc_ohc=c3GLFU0lYHkQ7kNvgEQvha3&_nc_zt=23&_nc_ht=scontent.fbkk3-4.fna&oh=00_AYAVb04lOcYCZRzJZjWJr191Nlkf1YeqhfscmqlT7FrrOQ&oe=66C211B6" 
+                                    <img src="https://scontent.fbkk33-2.fna.fbcdn.net/v/t39.30808-1/429815762_3300227416940834_7291681446868113561_n.jpg?stp=dst-jpg_s160x160&_nc_cat=102&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeHXnCMMQkX8o1C7j0L2jYE5KrR4WiEP5D4qtHhaIQ_kPt9Kb4xCXZ7w4DmwHJA0FYDR2kmqnnjTn3bV-SZAw30C&_nc_ohc=wDdyv94HhWgQ7kNvgE1rHQa&_nc_ht=scontent.fbkk33-2.fna&_nc_gid=ApCPI3BDPIGOOR7gQP-yUAp&oh=00_AYBb9Sau_W2ixk4pjHtQz-f0LsumpK9OqPjMy33iEah7uA&oe=66E1A238" 
                                         alt="Image description" class="d-block ui-w-40">
                                     <div class="media-body ml-4">
                                         <label class="btn btn-primary btn-small" >
@@ -100,37 +61,32 @@
                                         </button>
                                     </div>
                                     
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <div class="form-group input-box">
-                                    <div class="input-container"></div>
-                                    <label class="form-label">ชื่อผู้ใช้</label>
-                                        <input type="text" class="input-field" value="Veerayut001">
+                            </div><hr class="border-light m-0">
+                            <div class="tab-pane fade active show" id="account-general">
+                                <div class="card-body">
+                                    <div class="form-group input-box">
+                                        <label class="form-label">ชื่อผู้ใช้</label>
+                                        <input type="text" class="form-control" value="Veerayut001">
                                         <i class="bx bx-user icon"></i>
-                                </div>
-                                <div class="form-group input-box">
-                                    <div class="input-container"></div>
-                                    <label class="form-label">ชื่อ</label>
-                                        <input type="text" class="input-field" value="Keng">
-                                        <i class="bx bx-user icon"></i>
-
-                                </div>
-                                <div class="form-group input-box">
-                                    <div class="input-container"></div>
-                                    <label class="form-label">อีเมล</label>
-                                    <input type="text" class="input-field" value="veerayut.p64@chandra.ac.th">
-                                    <i class="bx bx-mail-send"></i>
-                                    <div class="alert alert-warning mt-3">
-                                        อีเมลของคุณไม่ได้รับการยืนยัน กรุณาตรวจสอบกล่องจดหมายของคุณ<br>
-                                        <a href="javascript:void(0)">ยืนยันอีกครั้ง</a>
                                     </div>
-                                </div>
-                                <div class="form-group input-box">
-                                    <div class="input-container"></div>
-                                    <label class="form-label">ชื่อร้านค้า</label>
-                                    <input type="text" class="input-field" value="ผลไม้เมืองกรุง">
-                                    <i class="bx bxl-apple"></i>
+                                    <div class="form-group input-box">
+                                        <label class="form-label">ชื่อ</label>
+                                        <input type="text" class="form-control" value="Keng">
+                                        <i class="bx bx-user icon"></i>
+                                    </div>
+                                    <div class="form-group input-box">
+                                        <label class="form-label">อีเมล</label>
+                                        <input type="text" class="form-control" value="veerayut.p64@chandra.ac.th">
+                                        <i class="bx bx-mail-send icon"></i>
+                                        <div class="alert alert-warning mt-3">
+                                            อีเมลของคุณไม่ได้รับการยืนยัน กรุณาตรวจสอบกล่องจดหมายของคุณ<br>
+                                            <a href="javascript:void(0)">ยืนยันอีกครั้ง</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group input-box">
+                                        <label class="form-label">ชื่อร้านค้า</label>
+                                        <input type="text" class="form-control" value="ผลไม้เมืองกรุง">
+                                    </div>
                                 </div>
                             </div>
                         </div>

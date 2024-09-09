@@ -11617,20 +11617,6 @@ html, body {
 }
 
 
-/*                     ตั้งค่าโปรไฟล์                    */
-
-
-
-
-
-.form-group {
-  /* สไตล์สำหรับ form-group */
-}
-
-.input-box {
-  /* สไตล์สำหรับ input-box */
-}
-
 /*                     ตั้งค่าหัวหลักในโปรไฟล                 */
 
 /* การจัดสไตล์พื้นฐานสำหรับลิงก์ในรายการ */
@@ -11878,7 +11864,7 @@ html, body {
 
 .card {
   position: relative; /* ตั้งค่าตำแหน่งเพื่อให้สามารถใช้ pseudo-element */
-  background: url('.../assets/img/profile.jpg') no-repeat center center;
+  bbackground: url('../assets/img/profile.jpg') no-repeat center center !important;
   background-size: cover;
   color: #ffffff;
 }
