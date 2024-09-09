@@ -62,4 +62,31 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // เรียกใช้ฟังก์ชั่นทันทีที่โหลดหน้าเว็บเสร็จ
     navbarColorChange();
+    function purchaseSelected() {
+        const selectedSpaces = [];
+        const marketGroups = document.querySelectorAll('.market-group'); // เลือกทุกตลาด
+    
+        marketGroups.forEach(marketGroup => {
+            const marketName = marketGroup.getAttribute('data-market'); // ดึงชื่อของตลาดจาก data-market
+            const checkboxes = marketGroup.querySelectorAll('input[type="checkbox"]:checked'); // ค้นหาพื้นที่ที่ถูกเลือกในตลาดนั้น ๆ
+            
+            checkboxes.forEach(checkbox => {
+                selectedSpaces.push({
+                    space: checkbox.value,
+                    market: marketName // เพิ่มชื่อของตลาดไปด้วย
+                });
+            });
+        });
+        
+        if (selectedSpaces.length > 0) {
+            let message = "พื้นที่ที่คุณเลือกมีดังนี้:\n";
+            selectedSpaces.forEach(selection => {
+                message += `${selection.space} ในตลาด ${selection.market}\n`; // แสดงชื่อพื้นที่พร้อมกับตลาด
+            });
+            alert(message); // แสดงผลพื้นที่และตลาดที่เลือก
+        } else {
+            alert("กรุณาเลือกพื้นที่ก่อนทำการยืนยัน");
+        }
+    }
+    
 });

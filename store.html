@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" href="assets/img/i2store.ico" type="image/x-icon">
     <!-- Font Awesome icons (free version) -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts -->
@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
+    
     
     <style>
         /* Media query สำหรับหน้าจอขนาดเล็ก */
@@ -77,17 +78,7 @@
             margin-bottom: 30px;
         }
 
-        .masthead .btn-primary {
-            font-size: 1.2em;
-            padding: 10px 20px;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .masthead .btn-primary:hover {
-            background-color: #0056b3;
-        }
+        
 
         /* Grid Container styles */
         .grid-container {
@@ -138,18 +129,7 @@
             color: #fa1c1c;
         }
 
-        .purchase-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            margin: 20px auto;
-            cursor: pointer;
-        }
+        
     </style>
 </head>
 <body id="page-top">
@@ -164,7 +144,6 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">หน้าแรก</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อ</a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html">บัญชีของฉัน</a></li>
                 </ul>
@@ -181,78 +160,92 @@
             </html></h1>
             <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
             <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">เลือกพื้นที่ที่ดีที่สุดสำหรับคุณจากรายการของเรา</p>
+            <a class="btn btn-primary" href="#store01" >เลือกพื้นที่</a>
         </div>
     </header>
 
     <!-- Projects Section -->
 
-    <section class="projects-section bg-light" id="projects">
+    <section class="projects-section bg-light" id="store01">
         <div class="container px-4 px-lg-5">
-            <!-- Featured Project Row -->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
-                        <h1 class="mx-auto my-0 text-uppercase" style="color: #109e6f;">ตลาดดินแดง(จำนงค์)
+            
+            <!-- ตลาดดินแดง(จำนงค์) -->
+            <div class="market-group" data-market="ตลาดดินแดง(จำนงค์)">
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h1 class="mx-auto my-0 text-uppercase" style="color: #109e6f;">ตลาดดินแดง(จำนงค์)</h1>
                             <h1 class="mx-auto my-0 text-uppercase" style="color: #109e6f;">ตลาดกลาง</h1>
-                        <p class="text-black-50 mb-0">เลือกพื้นที่แล้วกดยืนยันได้เลย!</p>
+                            <p class="text-black-50 mb-0">เลือกพื้นที่แล้วกดยืนยันได้เลย!</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="grid-container">
+                    <!-- กริดพื้นที่สำหรับตลาดดินแดง(จำนงค์) -->
+                    <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
+                        <div class="card-body">
+                            <input type="checkbox" id="space1" name="space" value="ตลาดดินแดง(จำนงค์) พื้นที่ 1" class="checkbox-overlay">
+                            <h3>พื้นที่ 1</h3>
+                            <p class="price">฿2,500/เดือน</p>
+                            <p class="status available">ว่าง</p>
+                        </div>
+                    </div>
+    
+                    <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
+                        <div class="card-body">
+                            <input type="checkbox" id="space2" name="space" value="ตลาดดินแดง(จำนงค์) พื้นที่ 2" class="checkbox-overlay">
+                            <h3>พื้นที่ 2</h3>
+                            <p class="price">฿3,000/เดือน</p>
+                            <p class="status rented">เช่าแล้ว</p>
+                        </div>
+                    </div>
+    
+                    <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
+                        <div class="card-body">
+                            <input type="checkbox" id="space3" name="space" value="ตลาดดินแดง(จำนงค์) พื้นที่ 3" class="checkbox-overlay">
+                            <h3>พื้นที่ 3</h3>
+                            <p class="price">฿2,500/เดือน</p>
+                            <p class="status available">ว่าง</p>
+                        </div>
+                    </div>
+    
+                    <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
+                        <div class="card-body">
+                            <input type="checkbox" id="space4" name="space" value="ตลาดดินแดง(จำนงค์) พื้นที่ 4" class="checkbox-overlay">
+                            <h3>พื้นที่ 4</h3>
+                            <p class="price">฿3,000/เดือน</p>
+                            <p class="status rented">เช่าแล้ว</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Grid Container -->
-            <div class="grid-container">
-                <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
-                    <div class="card-body">
-                        <input type="checkbox" id="space1" name="space" value="พื้นที่ 1" class="checkbox-overlay">
-                        <h3>พื้นที่ 1</h3>
-                        <p class="price">฿2,500/เดือน</p>
-                        <p class="status available">ว่าง</p>
+    
+            <!-- ตลาดจตุจักร -->
+            <div class="market-group" data-market="ตลาดจตุจักร">
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h1 class="mx-auto my-0 text-uppercase" style="color: #109e6f;">ตลาดจตุจักร</h1>
+                            <p class="text-black-50 mb-0">เลือกพื้นที่แล้วกดยืนยันได้เลย!</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
-                    <div class="card-body">
-                        <input type="checkbox" id="space1" name="space" value="พื้นที่ 2" class="checkbox-overlay">
-                        <h3>พื้นที่ 2</h3>
-                        <p class="price">฿3,000/เดือน</p>
-                        <p class="status rented">เช่าแล้ว</p>
+    
+                <div class="grid-container">
+                    <!-- กริดพื้นที่สำหรับตลาดจตุจักร -->
+                    <div class="card" style="background: url('assets/img/market.jpg') no-repeat center center; background-size: cover;">
+                        <div class="card-body">
+                            <input type="checkbox" id="space5" name="space" value="ตลาดจตุจักร พื้นที่ 1" class="checkbox-overlay">
+                            <h3>พื้นที่ 1</h3>
+                            <p class="price">฿2,500/เดือน</p>
+                            <p class="status available">ว่าง</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
-                    <div class="card-body">
-                        <input type="checkbox" id="space1" name="space" value="พื้นที่ 3" class="checkbox-overlay">
-                        <h3>พื้นที่ 1</h3>
-                        <p class="price">฿2,500/เดือน</p>
-                        <p class="status available">ว่าง</p>
-                    </div>
-                </div>
-                <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
-                    <div class="card-body">
-                        <input type="checkbox" id="space1" name="space" value="พื้นที่ 4" class="checkbox-overlay">
-                        <h3>พื้นที่ 2</h3>
-                        <p class="price">฿3,000/เดือน</p>
-                        <p class="status rented">เช่าแล้ว</p>
-                    </div>
-                </div>
-                <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
-                    <div class="card-body">
-                        <input type="checkbox" id="space1" name="space" value="พื้นที่ 5" class="checkbox-overlay">
-                        <h3>พื้นที่ 1</h3>
-                        <p class="price">฿2,500/เดือน</p>
-                        <p class="status available">ว่าง</p>
-                    </div>
-                </div>
-                <div class="card" style="background: url('assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover;">
-                    <div class="card-body">
-                        <input type="checkbox" id="space1" name="space" value="พื้นที่ 6" class="checkbox-overlay">
-                        <h3>พื้นที่ 2</h3>
-                        <p class="price">฿3,000/เดือน</p>
-                        <p class="status rented">เช่าแล้ว</p>
-                    </div>
-                </div>
-                    
-                <!-- เพิ่มพื้นที่อื่นๆ ตามต้องการ -->
             </div>
+    
+            <!-- ปุ่มยืนยันสำหรับทั้งตลาด -->
             <div class="d-flex justify-content-end mt-3">
                 <button class="btn btn-primary" onclick="purchaseSelected()" style="
                     transition: background-color 0.3s, transform 0.3s; 
@@ -264,11 +257,19 @@
                     ซื้อพื้นที่ที่เลือก
                 </button>
             </div>
-            
-            
-            
+    
+            <!-- แสดงพื้นที่ที่เลือก -->
+            <div id="selected-spaces" class="container px-4 px-lg-5 mt-5">
+                <!-- ข้อมูลพื้นที่ที่เลือกจะถูกแสดงที่นี่ -->
+            </div>
+    
         </div>
     </section>
+    
+    
+    
+    
+
 
     <section class="signup-section" id="signup">
         <div class="container px-4 px-lg-5">

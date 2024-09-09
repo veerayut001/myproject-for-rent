@@ -11885,3 +11885,84 @@ html, body {
   z-index: 2; /* ทำให้เนื้อหาของการ์ดอยู่ด้านบน */
 }
 
+
+header {
+  position: relative;
+  z-index: 10; /* ค่า z-index ที่สูงพอสมควร */
+}
+
+
+
+/*                     หน้าต่างติดต่อ                     */
+
+
+
+
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+  background-color: #ffffff; /* พื้นหลังของทั้งหน้าเป็นสีขาว */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+section {
+  margin-bottom: 40px;
+  background-color: #ffffff; /* พื้นหลังของแต่ละ section เป็นสีขาว */
+}
+
+
+/* เพิ่ม CSS นี้ในไฟล์ styles.css ของคุณ */
+
+section {
+  margin: 0; /* ลบช่องว่างด้านบนและด้านล่างของ section */
+  padding: 20px; /* เพิ่มเติม padding ให้กับ section เพื่อเพิ่มพื้นที่ว่างภายใน */
+}
+
+/* หากต้องการลดระยะห่างระหว่าง section */
+section + section {
+  margin-top: 0; /* ลบช่องว่างด้านบนระหว่าง section ที่ติดกัน */
+}
+
+/*                     หน้าต่างติดต่อ ข้อมูล                     */
+
+.contact-section {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+}
+
+.contact-info h1 {
+  color: #109e6f;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form .btn-primary {
+  background-color: #109e6f;
+  border-color: #109e6f;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #0e7c5b;
+  border-color: #0e7c5b;
+}
+
+.map iframe {
+  border-radius: 8px;
+}
+
+.social-media .btn-outline-primary {
+  border-color: #109e6f;
+  color: #109e6f;
+}
+
+.social-media .btn-outline-primary:hover {
+  background-color: #109e6f;
+  color: #fff;
+}
