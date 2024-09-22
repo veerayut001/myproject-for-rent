@@ -48,23 +48,7 @@
 </head>
 <body id="page-top">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand">JONG KAB CHAN</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                เมนู
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="store.html">ร้านค้า</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">เกี่ยวกับเรา</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">เข้าสู่ระบบ</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include("nav.php") ?>
 
     <!-- Masthead-->
     <header class="masthead" id="page-top">
@@ -72,7 +56,7 @@
             <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
             <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
             <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
-            <a class="btn btn-primary" href="store.html" target="_blank">จองกันเลย!</a>
+            <a class="btn btn-primary" href="store.php" target="_blank">จองกันเลย!</a>
 
         </div>
     </header>

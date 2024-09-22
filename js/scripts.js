@@ -88,5 +88,12 @@ window.addEventListener('DOMContentLoaded', event => {
             alert("กรุณาเลือกพื้นที่ก่อนทำการยืนยัน");
         }
     }
+
+
+
+    
     
 });
+
+
+

@@ -11864,7 +11864,7 @@ html, body {
 
 .card {
   position: relative; /* ตั้งค่าตำแหน่งเพื่อให้สามารถใช้ pseudo-element */
-  bbackground: url('../assets/img/profile.jpg') no-repeat center center !important;
+  background: url('../assets/img/profile.jpg') no-repeat center center !important;
   background-size: cover;
   color: #ffffff;
 }
@@ -11966,3 +11966,5 @@ section + section {
   background-color: #109e6f;
   color: #fff;
 }
+
+
