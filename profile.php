@@ -21,27 +21,31 @@
 <body>
     <div class="card overflow-hidden" style="background: url('../assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover; color: #ffffff;"></div>
     <div class="container light-style flex-grow-1 container-p-y">
-        <div class="d-flex justify-content-between no-border">
-            <h4 class="font-weight-bold py-3 mb-4">Account settings</h4>
-            <a href="index.html" class="align-self-center no-underline">หน้าแรก</a>
+    <div class="d-flex justify-content-between no-border">
+        <?php include("nav.php") ?>
+    </div>
+    <header class="masthead" id="page-top">
+        <div class="text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
+            <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
+            <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
+            <a class="btn btn-primary" href="#profile" >บัญชีของฉัน</a>
+
         </div>
-        
-        
+    </header>
+    
+    <div class="row no-gutters row-bordered row-border-light" id="profile">
+        <div class="col-md-3 pt-0">
+            <div class="list-group list-group-flush account-settings-links">
+                <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-general">ทั่วไป</a>
+                <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-change-password">เปลี่ยนรหัสผ่าน</a>
+                <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-info">ข้อมูล</a>
+                <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-social-links">ลิงค์โซเชียล</a>
+                <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#connections">ข้อมูลการค้า</a>
+            </div>
+        </div>
 
         
-            <div class="row no-gutters row-bordered row-border-light">
-                <div class="col-md-3 pt-0">
-                    <div class="list-group list-group-flush account-settings-links">
-                        <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-general">ทั่วไป</a>
-                        <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-change-password">เปลี่ยนรหัสผ่าน</a>
-                        <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-info">ข้อมูล</a>
-                        <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-social-links">ลิงค์โซเชียล</a>
-                        <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#connections">ข้อมูลการค้า</a>
-                        </a>
-                    </div>
-                </div>
-                
-
                 <div class="col-md-9">
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="account-general">
@@ -157,22 +161,23 @@
 
                         </div>
                         
-<div class="d-flex justify-content-end mt-3">
-    <button type="button" class="btn btn-primary">ยืนยัน</button>&nbsp;
-    <button type="button" class="btn btn-primary">ยกเลิก</button>
-</div>
-
+    <div class="d-flex justify-content-end mt-3">
+        <button type="button" class="btn btn-primary">ยืนยัน</button>&nbsp;
+        <button type="button" class="btn btn-primary">ยกเลิก</button>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- SB Forms JS -->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
+
+        </div>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- SB Forms JS -->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 </body>
 
