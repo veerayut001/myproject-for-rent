@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// ตรวจสอบการล็อกอิน
+if (!isset($_SESSION['user_id'])) {
+    header("Location: c_login.php");
+    exit();
+}
+
+// เชื่อมต่อฐานข้อมูล (ตามที่คุณได้ระบุไว้ใน c_db_config.php)
+// include("c_db_config.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,12 +147,16 @@
     </style>
 </head>
 <body id="page-top">
+    
     <!-- Navigation-->
     <?php include("nav.php") ?>
 
     <!-- Masthead-->
     <header class="masthead">
         <div class="text-center">
+            <div class="text-right" style="font-size: 14px; color: #ffffff;">
+                <h1 class="mx-auto my-0" style="font-size: 1.5rem;">ยินดีต้อนรับ, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h1>
+            </div>
             <h1 class="mx-auto my-0 text-uppercase">Store</h1>
             <html lang="en">
             

@@ -11,7 +11,7 @@
                     <li class="nav-item"><a class="nav-link" href="store.php">ร้านค้า</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.php">ติดต่อ</a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.php">บัญชีของฉัน</a></li>
-                    <li class="nav-item"><a class="nav-link" href="c_login.php">เข้าสู่ระบบ</a></li>
+                    
                 </ul>
             </div>
         </div>

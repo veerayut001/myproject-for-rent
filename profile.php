@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// ตรวจสอบการล็อกอิน
+if (!isset($_SESSION['user_id'])) {
+    header("Location: c_login.php");
+    exit();
+}
+
+// เชื่อมต่อฐานข้อมูล (ตามที่คุณได้ระบุไว้ใน c_db_config.php)
+// include("c_db_config.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +33,7 @@
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<body>
+<body>  
     <div class="card overflow-hidden" style="background: url('../assets/img/tokyo-Master.jpg') no-repeat center center; background-size: cover; color: #ffffff;"></div>
     <div class="container light-style flex-grow-1 container-p-y">
     <div class="d-flex justify-content-between no-border">
@@ -26,6 +41,9 @@
     </div>
     <header class="masthead" id="page-top">
         <div class="text-center">
+            <div class="text-right" style="font-size: 14px; color: #ffffff;">
+                <h1 class="mx-auto my-0" style="font-size: 1.5rem;">ยินดีต้อนรับ, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h1>
+            </div>
             <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
             <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
             <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
@@ -67,32 +85,23 @@
                                     
                             </div><hr class="border-light m-0">
                             <div class="tab-pane fade active show" id="account-general">
-                                <div class="card-body">
-                                    <div class="form-group input-box">
-                                        <label class="form-label">ชื่อผู้ใช้</label>
-                                        <input type="text" class="form-control" value="Veerayut001">
-                                        
-                                    </div>
-                                    <div class="form-group input-box">
-                                        <label class="form-label">ชื่อ</label>
-                                        <input type="text" class="form-control" value="Keng">
-                                        
-                                    </div>
-                                    <div class="form-group input-box">
-                                        <label class="form-label">อีเมล</label>
-                                        <input type="text" class="form-control" value="veerayut.p64@chandra.ac.th">
-                                        
-                                        <div class="alert alert-warning mt-3">
-                                            อีเมลของคุณไม่ได้รับการยืนยัน กรุณาตรวจสอบกล่องจดหมายของคุณ<br>
-                                            <a href="javascript:void(0)">ยืนยันอีกครั้ง</a>
-                                        </div>
-                                    </div>
-                                    <div class="form-group input-box">
-                                        <label class="form-label">ชื่อร้านค้า</label>
-                                        <input type="text" class="form-control" value="ผลไม้เมืองกรุง">
-                                    </div>
+                            <div class="card-body">
+                            <form method="POST" action="">
+                                <div class="form-group input-box">
+                                    <label class="form-label">ชื่อ</label>
+                                    <input type="text" name="firstname" class="form-control" value="<?php echo htmlspecialchars($_SESSION['firstname']); ?>" readonly>
                                 </div>
-                            </div>
+                                <div class="form-group input-box">
+                                    <label class="form-label">นามสกุล</label>
+                                    <input type="text" name="lastname" class="form-control" value="<?php echo htmlspecialchars($_SESSION['lastname']); ?>" readonly>
+                                </div>
+                                <div class="form-group input-box">
+                                    <label class="form-label">อีเมล</label>
+                                    <input type="email" name="email" class="form-control" value="<?php echo htmlspecialchars($_SESSION['email']); ?>" readonly>
+                                </div>
+                            </form>
+                        </div>
+                </div>
                         </div>
                         <div class="tab-pane fade" id="account-change-password"> 
                             <div class="card-body">
@@ -163,7 +172,15 @@
                         
     <div class="d-flex justify-content-end mt-3">
         <button type="button" class="btn btn-primary">ยืนยัน</button>&nbsp;
-        <button type="button" class="btn btn-primary">ยกเลิก</button>
+        <button type="button" class="btn btn-primary">ยกเลิก</button>&nbsp;
+        <a href="c_logout.php" class="btn btn-danger" onclick="return confirmLogout()">ออกจากระบบ</a>
+        <script>
+        function confirmLogout() {
+            // แสดงข้อความแจ้งเตือน
+            return confirm("คุณแน่ใจหรือไม่ว่าจะออกจากระบบ?");
+        }
+        </script>
+
     </div>
     
 

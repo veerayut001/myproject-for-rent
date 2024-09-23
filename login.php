@@ -17,60 +17,11 @@
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
     
-    <style>
-        /* Media query สำหรับหน้าจอขนาดเล็ก */
-        @media (max-width: 768px) {  
-            .navbar-nav .nav-link {
-                color: #ffffff; /* สีตัวอักษรในหน้าจอขนาดเล็ก */
-            }
-
-            .navbar-nav .nav-link:hover {
-                color: #43a76d !important; /* เปลี่ยนสีเป็นเขียวเมื่อโฮเวอร์ในหน้าจอขนาดเล็ก */
-            }
-        }
-    </style>
+    
 </head>
 <body>
-    <div class="wrapper">
-        <nav class="nav">
-            <div class="nav-logo" id="navMenu">
-                <a href="index.html">
-                    <p class="logo-title">JONG KAB CHAN</p>
-                    <h2 class="logo-subtitle">จองกับฉัน</h2>
-
-                </a>
-            </div>
-            
-            <div class="nav-menu" id="navMenu">
-                <ul>
-                    <li class="nav-item"><a class="nav-link" href="index.html">หน้าแรก</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="store.html">ร้านค้า</a></li>
-                </ul>
-            </div>            
-            
-            <div class="nav-button">
-                <style>
-                    .btn {
-                     display: inline-block;
-                     padding: 10px 20px; /* ขนาดของปุ่ม */
-                     font-size: 16px; /* ขนาดตัวอักษร */
-                     text-align: center; /* จัดตัวอักษรตรงกลาง */
-                     cursor: pointer;
-                     background-color: #007bff; /* สีพื้นหลังของปุ่ม */
-                     color: white; /* สีตัวอักษร */
-                     border: none; /* กรอบปุ่ม */
-                     border-radius: 4px; /* มุมโค้งของปุ่ม */
- 
-                     }
-                     </style>
-                <button class="btn white-btn" id="loginBtn" onclick="login()">เข้าสู่ระบบ</button>
-                <button class="btn" id="registerBtn" onclick="register()">สมัครเลย</button>
-            </div>
-            <div class="nav-menu-btn">
-                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-            </div>
-        </nav>
+    
+        
         <div class="form-box">
             <div class="login-container" id="login">
                 <div class="top">
@@ -135,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </div>   
+       
     <script>
         function myMenuFunction() {
             var i = document.getElementById("navMenu");

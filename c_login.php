@@ -32,14 +32,10 @@
 </head>
 <body>
     <div class="wrapper">
-            <?php include("nav.php") ?>            
-            
-            
-            <div class="nav-menu-btn">
-                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-            </div>
-        </nav>
+        <?php include("nav.php") ?>            
+
         <div class="form-box">
+            <!-- ฟอร์มเข้าสู่ระบบ -->
             <form class="login-container" id="login" action="c_process-login.php" method="POST">
                 <div class="top">
                     <span>ยังไม่มีบัญชีใช่ไหม? <a href="#" onclick="register()">ลงชื่อเข้าใช้งาน</a></span>
@@ -67,8 +63,8 @@
                 </div>
             </form>
         
-
-            <div class="register-container" id="register" action="c_process-login.php" method="POST">
+            <!-- ฟอร์มลงทะเบียน -->
+            <form class="register-container" id="register" action="c_process-register.php" method="POST">
                 <div class="top">
                     <span>มีบัญชีใช่ไหม? <a href="#" onclick="login()">ลงชื่อเข้าใช้งาน</a></span>
                     <header>สมัคร</header>
@@ -103,9 +99,10 @@
                         <label><a href="#">ข้อตกลงและเงื่อนไข</a></label>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>   
+
     <script>
         function myMenuFunction() {
             var i = document.getElementById("navMenu");
@@ -144,6 +141,7 @@
             registerContainer.style.opacity = 1;
         }
     </script>
+
     <!-- Bootstrap JavaScript (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

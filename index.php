@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +46,16 @@
             border: none; /* เอาขอบออก */
         }
     </style>
+<?php
+session_start(); // เริ่มต้น session
+
+// เช็คว่ามี firstname ใน session หรือไม่
+if (!isset($_SESSION['firstname'])) {
+    // ถ้าไม่มี ให้กำหนดค่าเริ่มต้น หรือ redirect ไปที่หน้า login
+    $_SESSION['firstname'] = ''; // หรือกำหนดค่าที่ต้องการ
+}
+?>
+    
     
 </head>
 <body id="page-top">
@@ -52,13 +64,15 @@
 
     <!-- Masthead-->
     <header class="masthead" id="page-top">
-        <div class="text-center">
-            <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
-            <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
-            <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
-            <a class="btn btn-primary" href="store.php" target="_blank">จองกันเลย!</a>
-
-        </div>
+    <div class="text-center">
+        <div class="text-right" style="font-size: 14px; color: #ffffff;">
+                <h1 class="mx-auto my-0" style="font-size: 1.5rem;">ยินดีต้อนรับ, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h1>
+            </div>
+        <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
+        <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
+        <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
+        <a class="btn btn-primary" href="store.php" target="_blank">จองกันเลย!</a>
+    </div>
     </header>
     
     <!-- Projects-->
