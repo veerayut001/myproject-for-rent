@@ -65,9 +65,12 @@ if (!isset($_SESSION['firstname'])) {
     <!-- Masthead-->
     <header class="masthead" id="page-top">
     <div class="text-center">
-        <div class="text-right" style="font-size: 14px; color: #ffffff;">
-                <h1 class="mx-auto my-0" style="font-size: 1.5rem;">ยินดีต้อนรับ, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h1>
-            </div>
+        <div class="text-left" style="font-size: 14px; color: #00ff00; margin-left: 0px;">
+            <h1 style="font-size: 3rem;">ยินดีต้อนรับ, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h1>
+        </div>
+
+
+
         <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
         <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
         <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
@@ -80,23 +83,29 @@ if (!isset($_SESSION['firstname'])) {
         <div class="container px-4 px-lg-5">
             <!-- Featured Project Row-->
             <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/tokyo-Master.jpg" alt="Featured Project" /></div>
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/ตลาดดินแดง2.jpg" alt="Featured Project" /></div>
                 <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
-                        <h4>เนื่อหาเว็ป!</h4>
-                        <p class="text-black-50 mb-0">เนื่อหาเว็ป!</p>
+                    <div class="featured-text text-center text-lg-left" style="color: #109e6f;">
+                        <h2>ตลาดดินแดง</h2>
+                        <h6 class="text-black-50 mb-0">ตลาดดินแดงเป็นตลาดขนาดใหญ่ที่ตั้งอยู่บริเวณซอยประชาสงเคราะห์ 9 และเป็นจุดหมายปลายทางที่น่าสนใจสำหรับคนรักการเดินตลาดและช้อปปิ้งในกรุงเทพฯ การเดินทางไปยังตลาดนี้สะดวกมาก โดยสามารถใช้บริการรถโดยสารสาธารณะได้หลากหลายสาย
+                        </h6>
                     </div>
                 </div>
             </div>
             <!-- Project One Row-->
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6"><img class="img-fluid" src="assets/img/tokyo-Master.jpg" alt="Project One" /></div>
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/ตลาดดินแดง1.jpg" alt="Project One" /></div>
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">เนื่อหาเว็ป!</h4>
-                                <p class="mb-0 text-white-50">เนื่อหาเว็ป!</p>
+                                <h4 class="text-white">เวลาเปิด-ปิดของตลาดดินแดง</h4>
+                                <p class="mb-0 text-white-50">
+                                ตลาดเช้า: เปิดตั้งแต่เวลา 05:00 น. ถึง 10:00 น. โดยจะมีสินค้าประเภทอาหารสด เช่น ผัก ผลไม้ เนื้อสัตว์ เครื่องแกง และอาหารสำเร็จรูปต่าง ๆ เช่น น้ำเต้าหู้และกับข้าวถุง
+                                </p>
+                                <p class="mb-0 text-white-50">
+                                ตลาดเย็น: กลับมาคึกคักอีกครั้งในเวลา 17:00 น. โดยมีร้านอาหารมากมายสำหรับนั่งรับประทาน มีทั้งร้านอาหารตามสั่ง ส้มตำ ปลาเผา ก๋วยเตี๋ยว และอาหารพื้นบ้าน เช่น แกงใต้ แกงเหนือ
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -104,13 +113,16 @@ if (!isset($_SESSION['firstname'])) {
             </div>
             <!-- Project Two Row-->
             <div class="row gx-0 justify-content-center">
-                <div class="col-lg-6"><img class="img-fluid" src="assets/img/tokyo-Master.jpg" alt="Project Two" /></div>
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/ตลาดดินแดง3.jpg" alt="Project Two" /></div>
                 <div class="col-lg-6 order-lg-first">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">เนื่อหาเว็ป!</h4>
-                                <p class="mb-0 text-white-50">เนื่อหาเว็ป!</p>
+                                <h4 class="text-white">เสาร์-อาทิตย์</h4>
+                                <p class="mb-0 text-white-50">
+                                    ในวันเสาร์และวันอาทิตย์ ตลาดดินแดงจะมีการเปิดท้ายขายเสื้อผ้า กระเป๋า และขนมต่าง ๆ เช่น เครปและน้ำแข็งไส ซึ่งเป็นโอกาสที่ดีในการช้อปปิ้งและสัมผัสบรรยากาศที่แตกต่างจากวันปกติ
+                                    ตลาดดินแดงจึงถือเป็นสวรรค์สำหรับพ่อบ้านแม่บ้านที่ต้องการซื้อของสดและอาหารสำเร็จรูปอย่างครบครัน ทั้งยังเป็นสถานที่ที่สามารถเพลิดเพลินกับการช้อปปิ้งในบรรยากาศที่คึกคักและสนุกสนาน
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -118,86 +130,6 @@ if (!isset($_SESSION['firstname'])) {
             </div>
         </div>
     </section>
-    
-    <!-- Signup-->
-    <section class="signup-section" id="signup">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-md-10 col-lg-8 mx-auto text-center">
-                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                    <h2 class="text-white mb-5">สมัครสมาชิกเพื่อรับข้อมูลเพิ่มเติม!</h2>
-                    <!-- SB Forms Contact Form -->
-                    <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Email address input-->
-                        <div class="row input-group-newsletter">
-                            <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="กรอกที่อยู่อีเมล..." aria-label="กรอกที่อยู่อีเมล..." data-sb-validations="required,email" /></div>
-                            <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">ส่งเลย!</button></div>
-                        </div>
-                        <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">จำเป็นต้องมีอีเมล</div>
-                        <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">อีเมลไม่ถูกต้อง</div>
-                        <!-- Submit success message-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3 mt-2 text-white">
-                                <div class="fw-bolder">ส่งแบบฟอร์มสำเร็จ!</div>
-                                หากต้องการเปิดใช้งานแบบฟอร์มนี้ ลงทะเบียนได้ที่
-                                <br />
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3 mt-2">เกิดข้อผิดพลาดในการส่งข้อความ!</div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact-->
-    <section class="contact-section bg-black">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0" style="color: rgb(255, 255, 255);">ที่อยู่</h4>
-                            <hr class="my-4 mx-auto" />
-                            <div class="small" style="color: #ffffff;">39/1 ถ. รัชดาภิเษก แขวงจันทรเกษม เขตจตุจักร กรุงเทพมหานคร 10900</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0" style="color: rgb(255, 255, 255);">อีเมล</h4>
-                            <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50"><a href="mailto:hello@yourdomain.com">veerayut.p64@chandra.ac.th</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0" style="color: rgb(255, 255, 255);">เบอร์โทรศัพท์</h4>
-                            <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50" style="color: #ffffff !important;">+66 802161638</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="social d-flex justify-content-center">
-                <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                <a class="mx-2" href="https://web.facebook.com/keng.kk.2"><i class="fab fa-facebook-f"></i></a>
-                <a class="mx-2" href="https://www.youtube.com/channel/UCLPoAGKuqUsHJwh51QWFhkw"><i class="fab fa-youtube"></i></a>
-
-            </div>
-        </div>
-    </section>
-    
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-70">
         <div class="container px-4 px-lg-5">Copyright &copy; Jong Kab Chan 2023</div>

@@ -11271,7 +11271,7 @@ body {
 /*                      เพจหน้าล็อคอิน              */
 
 body {
-  background: url('../assets/img/tokyo-Master.jpg') no-repeat center center fixed;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/tokyo-Master.jpg");
   background-size: cover; /* ปรับขนาดรูปภาพให้ครอบคลุมพื้นที่ทั้งหมด */
   margin: 0; /* ลบระยะห่างของ body */
   padding: 0; /* ลบการ padding ของ body */
@@ -11966,5 +11966,3 @@ section + section {
   background-color: #109e6f;
   color: #fff;
 }
-
-

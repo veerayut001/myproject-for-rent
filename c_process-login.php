@@ -30,13 +30,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['email'] = $row['email_account']; // เพิ่มการตั้งค่าอีเมล
 
             // นำผู้ใช้งานไปหน้าอื่น เช่น หน้าแรก
-            header("Location: index.php");
-            exit();  // หยุดการทำงานของ script หลังจาก redirect
+           // แสดงข้อความยืนยันการล็อกอินสำเร็จก่อนเปลี่ยนเส้นทาง
+            echo '<script>
+            alert("ล็อกอินสำเร็จ ยินดีต้อนรับ ' . $_SESSION['firstname'] . ' !");
+            window.location.href = "index.php"; // เปลี่ยนเส้นทางไปยังหน้าแรก
+        </script>';
+        exit();  // หยุดการทำงานของ script หลังจาก redirect
         } else {
-            echo "รหัสผ่านไม่ถูกต้อง";
+            echo '<script>
+            alert("รหัสผ่านไม่ถูกต้อง");
+            window.location.href = "c_login.php"; // เปลี่ยนเส้นทางไปยัง c_login.php
+          </script>';
         }
     } else {
-        echo "ไม่พบผู้ใช้งานนี้";
+        echo '<script>
+            alert("ไม่พบผู้ใช้งานนี้");
+            window.location.href = "c_login.php"; // เปลี่ยนเส้นทางไปยัง c_login.php
+          </script>';
     }
 }
 
