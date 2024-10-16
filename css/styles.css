@@ -11966,3 +11966,11 @@ section + section {
   background-color: #109e6f;
   color: #fff;
 }
+
+.masthead h1 {
+  color: inherit; /* ใช้สีที่พ่อแม่กำหนด (ถ้ามี) */
+}
+
+.custom-green {
+  color: #00ff00 !important; /* สีเขียวที่ต้องการ */
+}

@@ -54,8 +54,8 @@ if (!isset($_SESSION['user_id'])) {
         <div class="col-md-9">
         <div class="tab-content">
             <div class="tab-pane fade active show" id="account-general">
-                <div class="card-body media align-items-center">
-                    <div class="media align-items-center">
+                <div class="card-body media align-items-left" style="text-align: left;">
+                    <div class="media align-items-left" style="float: left;">
                         <img src="https://scontent.fbkk34-2.fna.fbcdn.net/v/t39.30808-6/353036638_3134299010200343_7816943231150869879_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFy1nJ-km8AIKEFysy0nYodUWT3KU9ZWjlRZPcpT1laOcmouaqNR554urhKw2tPv78p_3wnh4gGvKYLHonu9iVN&_nc_ohc=obimkLGHNU4Q7kNvgEi1v0s&_nc_zt=23&_nc_ht=scontent.fbkk34-2.fna&_nc_gid=AzDeDBrY0mWy9OU851PnUmp&oh=00_AYAcqv-i9vzGEojRTbmgOn9dcwQZNDbTXNe-TwIAbD-wQQ&oe=6708775B" 
                             alt="Image description" class="d-block ui-w-40">
                         <div class="media-body ml-4">

@@ -148,7 +148,17 @@ if (!isset($_SESSION['user_id'])) {
             display: none; /* ทำให้แบ็กกราวด์ไม่มีการแสดง */
         }       
         
-
+        
+        .status-count {
+           color: #28a745; /* สีสำหรับล็อคว่าง */
+        }
+        .status-unavailable {
+            color: #dc3545; /* สีสำหรับล็อคไม่ว่าง */
+        }
+        .status-total {
+            color: blue; /* สีสำหรับรวมล็อค */
+        }
+                    
     </style>
 </head>
 <body id="page-top">
@@ -193,7 +203,15 @@ if (!isset($_SESSION['user_id'])) {
                             <p class="text-black-50 mb-0">เลือกพื้นที่แล้วกดยืนยันได้เลย!</p>
                         </div>
                     </div>
-                </div>
+                    <div class="col-xl-4 col-lg-5 text-right" style="float: right;">
+                        <div class="col-xl-4 col-lg-5 offset-lg-2 text-right"> <!-- เพิ่ม offset เพื่อเคลื่อนให้ไปขวา -->
+                            <div class="status-summary" style="color: #109e6f;">
+                                <p>ล็อคว่าง: <span id="available-count" class="status-count">4</span></p>
+                                <p>ล็อคไม่ว่าง: <span id="unavailable-count" class="status-unavailable">2</span></p>
+                                <p>รวมล็อค: <span id="total-count" class="status-total">6</span></p>
+                            </div>
+                        </div>
+                    </div>
 
                 <div class="grid-container">
                     <!-- กริดพื้นที่สำหรับตลาดดินแดง(จำนงค์) -->
@@ -481,10 +499,21 @@ if (!isset($_SESSION['user_id'])) {
                             </div>
                             <button type="submit" class="btn btn-success">ยืนยันการชำระเงิน</button>
                         </form>
+
+                        <hr>
+
+                        <!-- ส่วนการจ่ายผ่านพร้อมเพย์ -->
+                        <h3>หรือชำระผ่านพร้อมเพย์</h3>
+                        <div id="promptPaySection">
+                            <p>สแกน QR Code เพื่อชำระเงินผ่านพร้อมเพย์</p>
+                            <img src="assets/img/promptpay01.jpg" alt="QR Code พร้อมเพย์" width="465" height="670">
+                            <p><strong>จำนวนเงิน: </strong><span id="promptPayAmount" style="color: #109e6f;">฿0</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
     </section>
     <script>
@@ -499,7 +528,7 @@ if (!isset($_SESSION['user_id'])) {
                 selectedSpaces.push(checkbox.value);
 
                 // ดึงราคาจากปุ่ม "ดูรายละเอียด" ที่เกี่ยวข้อง
-                const priceButton = document.querySelector(`button[data-space-id="${checkbox.value.split(" ")[2]}"]`); // แก้ไขตรงนี้ให้เข้ากับ id
+                const priceButton = document.querySelector(`button[data-space-id="${checkbox.value.split(" ")[2]}"]`); 
                 if (priceButton) {
                     const priceText = priceButton.getAttribute('data-price'); // ดึงราคาจาก attribute
                     const priceValue = parsePrice(priceText); // แปลงราคาเป็นตัวเลข
@@ -521,6 +550,9 @@ if (!isset($_SESSION['user_id'])) {
                 });
 
                 document.getElementById('totalPrice').textContent = `฿${totalPrice.toLocaleString()}`;
+
+                // อัปเดตราคาสำหรับพร้อมเพย์
+                document.getElementById('promptPayAmount').textContent = `฿${totalPrice.toLocaleString()}`;
 
                 // แสดงโมดัล
                 const modal = new bootstrap.Modal(document.getElementById('paymentModal'));

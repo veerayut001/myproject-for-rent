@@ -45,6 +45,8 @@
         .navbar-toggler {
             border: none; /* เอาขอบออก */
         }
+
+        
     </style>
 <?php
 session_start(); // เริ่มต้น session
@@ -64,19 +66,18 @@ if (!isset($_SESSION['firstname'])) {
 
     <!-- Masthead-->
     <header class="masthead" id="page-top">
-    <div class="text-center">
-        <div class="text-left" style="font-size: 14px; color: #00ff00; margin-left: 0px;">
-            <h1 style="font-size: 3rem;">ยินดีต้อนรับ, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h1>
+        <div class="text-center">
+            <div class="text-left" style="font-size: 14px; margin-left: 0px;">
+                <h1 class="custom-green" style="font-size: 3rem;">ยินดีต้อนรับ, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h1>
+            </div>
+
+            <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
+            <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
+            <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
+            <a class="btn btn-primary" href="store.php" target="_blank">จองกันเลย!</a>
         </div>
-
-
-
-        <h1 class="mx-auto my-0 text-uppercase">Jong Kab Chan</h1>
-        <h2 class="mx-auto my-0 text-uppercase" style="color: rgb(201, 195, 195); font-size: 35px;">จองกับฉัน</h2>
-        <p class="text-white-50 mx-auto mt-2 mb-5" style="font-size: 15px;">ยินดีตอนรับเข้าสู่เว็ปไซต์ "จองกับฉัน" เพื่อการจองที่สะดวกสบายและง่ายต่อการใช้งาน อย่างกับปลอกกล้วยเข้าปาก?</p>
-        <a class="btn btn-primary" href="store.php" target="_blank">จองกันเลย!</a>
-    </div>
     </header>
+
     
     <!-- Projects-->
     <section class="projects-section bg-light" id="about">
@@ -87,7 +88,8 @@ if (!isset($_SESSION['firstname'])) {
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left" style="color: #109e6f;">
                         <h2>ตลาดดินแดง</h2>
-                        <h6 class="text-black-50 mb-0">ตลาดดินแดงเป็นตลาดขนาดใหญ่ที่ตั้งอยู่บริเวณซอยประชาสงเคราะห์ 9 และเป็นจุดหมายปลายทางที่น่าสนใจสำหรับคนรักการเดินตลาดและช้อปปิ้งในกรุงเทพฯ การเดินทางไปยังตลาดนี้สะดวกมาก โดยสามารถใช้บริการรถโดยสารสาธารณะได้หลากหลายสาย
+                        <h6 class="mb-0  text-start" style="font-size: 20px;">
+                            ตลาดดินแดงเป็นตลาดขนาดใหญ่ที่ตั้งอยู่บริเวณซอยประชาสงเคราะห์ 9 และเป็นจุดหมายปลายทางที่น่าสนใจสำหรับคนรักการเดินตลาดและช้อปปิ้งในกรุงเทพฯ การเดินทางไปยังตลาดนี้สะดวกมาก โดยสามารถใช้บริการรถโดยสารสาธารณะได้หลากหลายสาย
                         </h6>
                     </div>
                 </div>
@@ -100,10 +102,10 @@ if (!isset($_SESSION['firstname'])) {
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
                                 <h4 class="text-white">เวลาเปิด-ปิดของตลาดดินแดง</h4>
-                                <p class="mb-0 text-white-50">
+                                <p class="mb-0 text-white-50 text-start" style="font-size: 20px;">
                                 ตลาดเช้า: เปิดตั้งแต่เวลา 05:00 น. ถึง 10:00 น. โดยจะมีสินค้าประเภทอาหารสด เช่น ผัก ผลไม้ เนื้อสัตว์ เครื่องแกง และอาหารสำเร็จรูปต่าง ๆ เช่น น้ำเต้าหู้และกับข้าวถุง
                                 </p>
-                                <p class="mb-0 text-white-50">
+                                <p class="mb-0 text-white-50 text-start" style="font-size: 20px; margin-top: 10px;">
                                 ตลาดเย็น: กลับมาคึกคักอีกครั้งในเวลา 17:00 น. โดยมีร้านอาหารมากมายสำหรับนั่งรับประทาน มีทั้งร้านอาหารตามสั่ง ส้มตำ ปลาเผา ก๋วยเตี๋ยว และอาหารพื้นบ้าน เช่น แกงใต้ แกงเหนือ
                                 </p>
                             </div>
@@ -119,7 +121,7 @@ if (!isset($_SESSION['firstname'])) {
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
                                 <h4 class="text-white">เสาร์-อาทิตย์</h4>
-                                <p class="mb-0 text-white-50">
+                                <p class="mb-0 text-white-50 text-start" style="font-size: 20px;">
                                     ในวันเสาร์และวันอาทิตย์ ตลาดดินแดงจะมีการเปิดท้ายขายเสื้อผ้า กระเป๋า และขนมต่าง ๆ เช่น เครปและน้ำแข็งไส ซึ่งเป็นโอกาสที่ดีในการช้อปปิ้งและสัมผัสบรรยากาศที่แตกต่างจากวันปกติ
                                     ตลาดดินแดงจึงถือเป็นสวรรค์สำหรับพ่อบ้านแม่บ้านที่ต้องการซื้อของสดและอาหารสำเร็จรูปอย่างครบครัน ทั้งยังเป็นสถานที่ที่สามารถเพลิดเพลินกับการช้อปปิ้งในบรรยากาศที่คึกคักและสนุกสนาน
                                 </p>
