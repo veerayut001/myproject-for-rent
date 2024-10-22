@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $target_dir = "uploads/"; // โฟลเดอร์ที่ใช้เก็บไฟล์
     $target_file = $target_dir . basename($_FILES["image"]["name"]);

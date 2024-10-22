@@ -56,7 +56,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="tab-pane fade active show" id="account-general">
                 <div class="card-body media align-items-left" style="text-align: left;">
                     <div class="media align-items-left" style="float: left;">
-                        <img src="https://scontent.fbkk34-2.fna.fbcdn.net/v/t39.30808-6/353036638_3134299010200343_7816943231150869879_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFy1nJ-km8AIKEFysy0nYodUWT3KU9ZWjlRZPcpT1laOcmouaqNR554urhKw2tPv78p_3wnh4gGvKYLHonu9iVN&_nc_ohc=obimkLGHNU4Q7kNvgEi1v0s&_nc_zt=23&_nc_ht=scontent.fbkk34-2.fna&_nc_gid=AzDeDBrY0mWy9OU851PnUmp&oh=00_AYAcqv-i9vzGEojRTbmgOn9dcwQZNDbTXNe-TwIAbD-wQQ&oe=6708775B" 
+                        <img src="https://scontent.fbkk34-2.fna.fbcdn.net/v/t39.30808-6/353036638_3134299010200343_7816943231150869879_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFy1nJ-km8AIKEFysy0nYodUWT3KU9ZWjlRZPcpT1laOcmouaqNR554urhKw2tPv78p_3wnh4gGvKYLHonu9iVN&_nc_ohc=ur2ijit9V-cQ7kNvgHEQPB6&_nc_zt=23&_nc_ht=scontent.fbkk34-2.fna&_nc_gid=AcjKkPhikN5l4Qe68F4lZvN&oh=00_AYAtoJBuOoJWTIhraECOX0FT8oGmEagZTI25FzGfiMtnkQ&oe=671B951B" 
                             alt="Image description" class="d-block ui-w-40">
                         <div class="media-body ml-4">
                             <label class="btn btn-primary btn-small">
@@ -85,15 +85,15 @@ if (!isset($_SESSION['user_id'])) {
                                     <form method="POST" action="u_update_profile_personal.php">
                                         <div class="form-group input-box">
                                             <label class="form-label">ชื่อ</label>
-                                            <input type="text" name="firstname" class="form-control " style="width: 400px;" value="<?php echo htmlspecialchars($_SESSION['firstname']); ?>" readonly>
+                                            <input type="text" name="firstname" class="form-control " style="width: 400px;" value="<?php echo htmlspecialchars($_SESSION['firstname']); ?>"readonly >
                                         </div>
                                         <div class="form-group input-box">
                                             <label class="form-label">นามสกุล</label>
-                                            <input type="text" name="lastname" class="form-control" style="width: 400px;" value="<?php echo htmlspecialchars($_SESSION['lastname']); ?>" readonly>
+                                            <input type="text" name="lastname" class="form-control" style="width: 400px;" value="<?php echo htmlspecialchars($_SESSION['lastname']); ?>"readonly >
                                         </div>
                                         <div class="form-group input-box">
                                             <label class="form-label">อีเมล</label>
-                                            <input type="email" name="email" class="form-control" style="width: 400px;" value="<?php echo htmlspecialchars($_SESSION['email']); ?>" readonly>
+                                            <input type="email" name="email" class="form-control" style="width: 400px;" value="<?php echo htmlspecialchars($_SESSION['email']); ?>"readonly >
                                         </div>                
                                         <div class="form-group input-box">
                                             <label class="form-label">วันเกิด</label>
