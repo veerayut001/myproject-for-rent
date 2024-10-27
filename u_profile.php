@@ -1,18 +1,17 @@
 <?php
 session_start();
+include 'c_db_connect.php';
 
 // ตรวจสอบการล็อกอิน
 if (!isset($_SESSION['user_id'])) {
     header("Location: c_login.php");
     exit();
 }
-// เชื่อมต่อฐานข้อมูล (ตามที่คุณได้ระบุไว้ใน c_db_config.php)
-// include("c_db_config.php"); ตอนนี้การ์ดพื้นหลังสีขาวอะ เอาออกยังไง 
 
-
-
-
+// ดึงข้อมูลการจองจากเซสชัน
+$reservations = $_SESSION['reservations'] ?? []; 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -46,7 +45,6 @@ if (!isset($_SESSION['user_id'])) {
                 <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-general1">ทั่วไป</a>
                 <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-info">ข้อมูล</a>
                 <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#account-social-links">ลิงค์โซเชียล</a>
-                <a class="list-group-item list-group-item-action custom-list-group-item" data-toggle="tab" href="#connections">ข้อมูลการค้า</a>
             </div>
         </div>
     
@@ -94,17 +92,10 @@ if (!isset($_SESSION['user_id'])) {
                                         <div class="form-group input-box">
                                             <label class="form-label">อีเมล</label>
                                             <input type="email" name="email" class="form-control" style="width: 400px;" value="<?php echo htmlspecialchars($_SESSION['email']); ?>"readonly >
-                                        </div>                
-                                        <div class="form-group input-box">
-                                            <label class="form-label">วันเกิด</label>
-                                            <input type="date" name="birthdate" class="form-control" style="width: 400px;" 
-                                                value="<?php echo isset($_SESSION['birthdate']) ? htmlspecialchars($_SESSION['birthdate']) : ''; ?>" required>
                                         </div>
                                         <div class="d-flex justify-content-end mt-3">
-                                            <button type="submit" class="btn btn-primary me-2">ยืนยัน</button>
-                                            <a href="u_profile.php" class="btn btn-secondary me-2">ยกเลิก</a>
                                             <a href="c_logout.php" class="btn btn-danger" onclick="return confirmLogout()">ออกจากระบบ</a>
-                                        </div>
+                                        </div>               
                                     </form>
                                 </div>
                             </div>
@@ -165,22 +156,34 @@ if (!isset($_SESSION['user_id'])) {
                                     </form>
                                 </div>
                             </div>
-
-                            <!-- แท็บสำหรับการเชื่อมต่อ -->
-                            <div class="tab-pane fade" id="connections">
-                                <div class="card-body pb-2">
-                                    <form method="POST" action="u_update_profile_reservation.php"> <!-- เพิ่ม action สำหรับส่งข้อมูล -->
-                                        <div class="form-group">
-                                            <label class="form-label">หมายเลขที่จอง</label> 
-                                            <input type="text" name="reservation_number" class="form-control" style="width: 300px;"
-                                                value="<?php echo isset($_SESSION['reservation_number']) ? htmlspecialchars($_SESSION['reservation_number']) : ''; ?>">
+                            <!-- แสดงข้อมูลการจอง -->
+                            <div class="reservation-details mt-4">
+                                <h3>ข้อมูลการจอง</h3>
+                                <div class="row" id="reservationList">
+                                    <?php if (!empty($_SESSION['reservations'])): ?>
+                                        <?php foreach ($_SESSION['reservations'] as $index => $reservation): ?>
+                                            <div class="col-md-4 mb-3 reservation-item" data-index="<?php echo $index; ?>" data-price="<?php echo htmlspecialchars($reservation['price']); ?>">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"><?php echo htmlspecialchars($reservation['title']); ?></h5>
+                                                        <p class="card-text">
+                                                            <strong>ราคา:</strong> <?php echo htmlspecialchars($reservation['price']); ?> บาท<br>
+                                                            <strong>รายละเอียด:</strong> <?php echo htmlspecialchars($reservation['description']); ?><br>
+                                                        </p>
+                                                        <button class="btn btn-danger" onclick="cancelReservation(<?php echo $index; ?>)">ยกเลิก</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <div class="col-12">
+                                            <p>ไม่มีข้อมูลการจอง</p>
                                         </div>
-                                        <div class="d-flex justify-content-end mt-3">
-                                            <button type="submit" class="btn btn-primary me-2">ยืนยัน</button>
-                                            <a href="u_profile.php" class="btn btn-secondary me-2">ยกเลิก</a>
-                                            <a href="c_logout.php" class="btn btn-danger" onclick="return confirmLogout()">ออกจากระบบ</a>
-                                        </div>
-                                    </form>
+                                    <?php endif; ?>
+                                </div>
+                                <p><strong>ราคารวม: </strong><span id="totalPrice" style="color: #109e6f;">฿0</span></p>
+                                <div class="d-flex justify-content-end mt-3 pb-3">
+                                    <a class="btn btn-danger" onclick="cancelAllReservations()">ยกเลิกทั้งหมด</a>
                                 </div>
                             </div>
                         </div>
@@ -194,6 +197,90 @@ if (!isset($_SESSION['user_id'])) {
         // แสดงข้อความแจ้งเตือน
         return confirm("คุณแน่ใจหรือไม่ว่าจะออกจากระบบ?");
     }
+
+    function cancelReservation(index) {
+        if (confirm("คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการจองนี้?")) {
+            fetch('cancel_reservation.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ index: index })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const reservationItem = document.querySelector(`.reservation-item[data-index="${index}"]`);
+                    reservationItem.remove(); // ลบการจองออกจาก UI
+
+                    // อัปเดตสถานะใน Local Storage
+                    let reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+                    reservations.splice(index, 1); // ลบการจองที่ถูกยกเลิก
+                    localStorage.setItem('reservations', JSON.stringify(reservations));
+
+                    // คืนค่าตำแหน่งใน UI สำหรับพื้นที่ที่ยกเลิก
+                    const spaceTitle = reservationItem.querySelector('.card-title').innerText;
+                    const statusElement = reservationItem.querySelector('.status');
+                    statusElement.innerText = 'ว่าง'; // เปลี่ยนสถานะกลับเป็น 'ว่าง'
+                    statusElement.classList.remove('rented');
+                    statusElement.classList.add('available');
+
+                    // อัปเดตราคารวม
+                    const price = parseFloat(reservationItem.querySelector('.card-text strong').innerText.replace('ราคา:', '').replace(' บาท', '').trim());
+                    let totalPrice = parseFloat(document.getElementById('totalPrice').innerText.replace('฿', '').trim());
+                    totalPrice -= price; // ลบราคาจากราคารวม
+                    document.getElementById('totalPrice').innerText = `฿${totalPrice.toFixed(2)}`; // อัปเดตราคารวม
+                } else {
+                    alert("การยกเลิกการจองล้มเหลว");
+                }
+            });
+        }
+    }
+
+    function cancelAllReservations() {
+        if (confirm("คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการจองทั้งหมด?")) {
+            fetch('cancel_all_reservations.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // ลบรายการการจองทั้งหมดจาก UI
+                    const reservationList = document.getElementById('reservationList');
+                    reservationList.innerHTML = ''; // ลบเนื้อหาทั้งหมด
+                    alert("ยกเลิกการจองทั้งหมดเรียบร้อยแล้ว");
+
+                    // อัปเดตสถานะใน Local Storage
+                    localStorage.setItem('reservations', JSON.stringify([]));
+
+                    // อัปเดตราคารวมกลับไปเป็น 0
+                    document.getElementById('totalPrice').innerText = '฿0';
+                } else {
+                    alert("เกิดข้อผิดพลาดในการยกเลิกการจองทั้งหมด");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการเชื่อมต่อ");
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const reservations = document.querySelectorAll('.reservation-item');
+        let totalPrice = 0;
+
+        reservations.forEach(reservation => {
+            const price = parseFloat(reservation.getAttribute('data-price').replace(/[^0-9.-]+/g, ''));
+            totalPrice += price;
+        });
+
+        // แสดงราคารวม
+        document.getElementById('totalPrice').innerText = `฿${totalPrice.toFixed(2)}`;
+    });
 
     </script>
     

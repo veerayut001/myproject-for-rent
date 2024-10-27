@@ -71,7 +71,7 @@ if (!isset($_SESSION['firstname'])) {
                         <div class="featured-text text-lg-left">
                             <h1 class="mx-auto my-0 text-uppercase">ข้อมูลการติดต่อ</h1>
                             <p style="white-space: nowrap;"><strong>ที่อยู่:</strong> 39/1 ถ. รัชดาภิเษก แขวงจันทรเกษม เขตจตุจักร กรุงเทพมหานคร 10900</p>
-                            <p><strong>โทรศัพท์:</strong> +66 802161638</p>
+                            <p><strong>โทรศัพท์:</strong> <a href="tel:0802161638" class="btn btn-success">0802161638</a></p>
                             <p><strong>อีเมล:</strong> veerayut.p64@chandra.ac.th</p>
                         </div>
                     </div>

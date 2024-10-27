@@ -96,7 +96,7 @@ if (!isset($_SESSION['firstname'])) {
             </div>
             <!-- Project One Row-->
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6"><img class="img-fluid" src="assets/img/ตลาดดินแดง1.jpg" alt="Project One" /></div>
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/ตลาดai2.jpg" alt="Project One" /></div>
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
@@ -115,7 +115,7 @@ if (!isset($_SESSION['firstname'])) {
             </div>
             <!-- Project Two Row-->
             <div class="row gx-0 justify-content-center">
-                <div class="col-lg-6"><img class="img-fluid" src="assets/img/ตลาดดินแดง3.jpg" alt="Project Two" /></div>
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/ตลาดai.jpg" alt="Project Two" /></div>
                 <div class="col-lg-6 order-lg-first">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">

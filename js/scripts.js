@@ -89,7 +89,128 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     }
 
-    
+    function viewDetails(spaceTitle, spacePrice, spaceStatus, spaceDescription, spaceId) {
+    document.getElementById('spaceTitle').innerText = spaceTitle;
+    document.getElementById('spacePrice').innerText = spacePrice;
+    document.getElementById('spaceStatus').innerText = spaceStatus;
+    document.getElementById('spaceDescription').innerText = spaceDescription;
+
+    // แสดง Modal
+    const modal = document.getElementById('spaceDetailsModal');
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => modal.style.display = "none");
+}
+
+function purchaseSelected() {
+    const selectedSpaces = [];
+    let totalPrice = 0;
+
+    // ดึงเช็คบ็อกซ์ที่ถูกเลือก
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    checkboxes.forEach(checkbox => {
+        selectedSpaces.push(checkbox.value);
+        const priceButton = document.querySelector(`button[data-space-id="${checkbox.id.replace('space', '')}"]`); 
+        const priceText = priceButton.getAttribute('data-price');
+        const priceValue = parsePrice(priceText);
+        totalPrice += priceValue;
+    });
+
+    if (selectedSpaces.length > 0) {
+        document.getElementById('totalPrice').textContent = `฿${totalPrice.toLocaleString()}`;
+        // แสดง Modal สำหรับการชำระเงิน
+        const modal = document.getElementById('paymentModal');
+        modal.style.display = "block";
+    } else {
+        alert('กรุณาเลือกพื้นที่ที่ต้องการจอง');
+    }
+}
+
+function parsePrice(priceText) {
+    return parseFloat(priceText.replace(/[^0-9.-]+/g, ""));
+}
+
+function confirmRental() {
+    alert("การจองของคุณเสร็จสมบูรณ์! กรุณาชำระเงิน...");
+    // อัปเดตสถานะพื้นที่ที่เลือกในฐานข้อมูล
+    updateStatus();
+}
+
+function updateStatus() {
+    const selectedSpaces = document.querySelectorAll('input[name="space"]:checked');
+    selectedSpaces.forEach(space => {
+        const spaceId = space.id.replace('space', '');
+        const spaceElement = document.getElementById(`space${spaceId}`);
+        spaceElement.querySelector('.status').innerText = 'ไม่ว่าง';
+        spaceElement.querySelector('.status').classList.remove('available');
+        spaceElement.querySelector('.status').classList.add('rented');
+    });
+}
+
+function viewDetails(spaceTitle, spacePrice, spaceStatus, spaceDescription, spaceId) {
+    document.getElementById('spaceTitle').innerText = spaceTitle;
+    document.getElementById('spacePrice').innerText = spacePrice;
+    document.getElementById('spaceStatus').innerText = spaceStatus;
+    document.getElementById('spaceDescription').innerText = spaceDescription;
+
+    // แสดง Modal
+    const modal = document.getElementById('spaceDetailsModal');
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => modal.style.display = "none");
+}
+
+function purchaseSelected() {
+    const selectedSpaces = [];
+    let totalPrice = 0;
+
+    // ดึงเช็คบ็อกซ์ที่ถูกเลือก
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    checkboxes.forEach(checkbox => {
+        selectedSpaces.push(checkbox.value);
+        const priceButton = document.querySelector(`button[data-space-id="${checkbox.id.replace('space', '')}"]`); 
+        const priceText = priceButton.getAttribute('data-price');
+        const priceValue = parsePrice(priceText);
+        totalPrice += priceValue;
+    });
+
+    if (selectedSpaces.length > 0) {
+        document.getElementById('totalPrice').textContent = `฿${totalPrice.toLocaleString()}`;
+        // แสดง Modal สำหรับการชำระเงิน
+        const modal = document.getElementById('paymentModal');
+        modal.style.display = "block";
+    } else {
+        alert('กรุณาเลือกพื้นที่ที่ต้องการจอง');
+    }
+}
+
+function parsePrice(priceText) {
+    return parseFloat(priceText.replace(/[^0-9.-]+/g, ""));
+}
+
+function confirmRental() {
+    alert("การจองของคุณเสร็จสมบูรณ์! กรุณาชำระเงิน...");
+    // อัปเดตสถานะพื้นที่ที่เลือกในฐานข้อมูล
+    updateStatus();
+}
+
+function updateStatus() {
+    const selectedSpaces = document.querySelectorAll('input[name="space"]:checked');
+    selectedSpaces.forEach(space => {
+        const spaceId = space.id.replace('space', '');
+        const spaceElement = document.getElementById(`space${spaceId}`);
+        spaceElement.querySelector('.status').innerText = 'ไม่ว่าง';
+        spaceElement.querySelector('.status').classList.remove('available');
+        spaceElement.querySelector('.status').classList.add('rented');
+    });
+}
+
 
     
     
